@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(timeout 3 tail:*)",
+      "Bash(npm run build:*)",
+      "Bash(tree:*)",
+      "Bash(npm install sockjs-client @stomp/stompjs)",
+      "WebFetch(domain:anyrouter.top)",
+      "WebFetch(domain:eastondev.com)",
+      "WebFetch(domain:openclawcn.com)",
+      "WebFetch(domain:www.cnblogs.com)",
+      "WebFetch(domain:zhuanlan.zhihu.com)",
+      "WebFetch(domain:docs.openclaw.ai)",
+      "WebFetch(domain:blog.laozhang.ai)",
+      "WebFetch(domain:openrouter.ai)",
+      "Bash(curl -s -m 30 -w \"\\\\n\\\\nHTTP_CODE: %{http_code}\\\\nTIME_TOTAL: %{time_total}s\" -X POST \"https://anyrouter.top/v1/messages\" -H \"Content-Type: application/json\" -H \"x-api-key: REDACTED\" -H \"anthropic-version: 2023-06-01\" -d '{\"\"model\"\":\"\"claude-opus-4-6\"\",\"\"max_tokens\"\":100,\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}]}')",
+      "Bash(curl -s -m 30 -w \"\\\\n\\\\nHTTP_CODE: %{http_code}\\\\nTIME_TOTAL: %{time_total}s\" -X POST \"https://anyrouter.top/v1/messages\" -H \"Content-Type: application/json\" -H \"x-api-key: REDACTED\" -H \"anthropic-version: 2023-06-01\" -d '{\"\"model\"\":\"\"claude-sonnet-4-6\"\",\"\"max_tokens\"\":100,\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}]}')",
+      "Bash(curl -s -m 30 -w \"\\\\n\\\\nHTTP_CODE: %{http_code}\\\\nTIME_TOTAL: %{time_total}s\" -X POST \"https://anyrouter.top/v1/chat/completions\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer REDACTED\" -d '{\"\"model\"\":\"\"gpt-5-codex\"\",\"\"max_tokens\"\":100,\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}]}')",
+      "Bash(for model in \"gpt-5.3-codex\" \"gpt-5.1-codex\" \"gpt-5-codex-mini\" \"o3\" \"gpt-4o\")",
+      "Bash(do echo \"=== Testing: $model ===\")",
+      "Bash(curl -s -m 15 -X POST \"https://anyrouter.top/v1/chat/completions\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer REDACTED\" -d \"{\"\"model\"\":\"\"$model\"\",\"\"max_tokens\"\":50,\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}]}\")",
+      "Bash(done)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" --connect-timeout 10 https://anyrouter.top)",
+      "Bash(curl -s --connect-timeout 10 --max-time 60 -X POST \"https://anyrouter.top/v1/chat/completions\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer REDACTED\" -d '{\"\"model\"\":\"\"claude-opus-4-6\"\",\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}],\"\"max_tokens\"\":50}')",
+      "Bash(curl -s --connect-timeout 10 --max-time 60 -X POST \"https://anyrouter.top/v1/messages\" -H \"Content-Type: application/json\" -H \"x-api-key: REDACTED\" -H \"anthropic-version: 2023-06-01\" -d '{\"\"model\"\":\"\"claude-opus-4-6\"\",\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}],\"\"max_tokens\"\":50}')",
+      "Bash(curl -s --connect-timeout 10 --max-time 60 -X POST \"https://anyrouter.top/messages\" -H \"Content-Type: application/json\" -H \"x-api-key: REDACTED\" -H \"anthropic-version: 2023-06-01\" -d '{\"\"model\"\":\"\"claude-opus-4-6\"\",\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}],\"\"max_tokens\"\":50}')",
+      "Bash(curl -s --compressed --connect-timeout 10 --max-time 60 -X POST \"https://anyrouter.top/messages\" -H \"Content-Type: application/json\" -H \"x-api-key: REDACTED\" -H \"anthropic-version: 2023-06-01\" -d '{\"\"model\"\":\"\"claude-opus-4-6\"\",\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}],\"\"max_tokens\"\":50}')",
+      "Bash(curl -s --compressed --connect-timeout 10 --max-time 30 -X POST \"https://a-ocnfniawgw.cn-shanghai.fcapp.run/v1/messages\" -H \"Content-Type: application/json\" -H \"x-api-key: REDACTED\" -H \"anthropic-version: 2023-06-01\" -d '{\"\"model\"\":\"\"claude-opus-4-6\"\",\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}],\"\"max_tokens\"\":50}')",
+      "Bash(curl -sv --connect-timeout 10 --max-time 30 -X POST \"https://a-ocnfniawgw.cn-shanghai.fcapp.run/v1/messages\" -H \"Content-Type: application/json\" -H \"x-api-key: REDACTED\" -H \"anthropic-version: 2023-06-01\" -H \"User-Agent: claude-code/1.0\" -d '{\"\"model\"\":\"\"claude-opus-4-6\"\",\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}],\"\"max_tokens\"\":50}')",
+      "Bash(curl -s --compressed --connect-timeout 10 --max-time 60 -X POST \"https://a-ocnfniawgw.cn-shanghai.fcapp.run/v1/messages\" -H \"Content-Type: application/json\" -H \"x-api-key: REDACTED\" -H \"anthropic-version: 2023-06-01\" -H \"anthropic-beta: prompt-caching-2024-07-31\" -d '{\"\"model\"\":\"\"claude-opus-4-6\"\",\"\"max_tokens\"\":50,\"\"stream\"\":true,\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"say hi\"\"}]}')",
+      "Bash(curl -s --compressed --connect-timeout 10 --max-time 60 -X POST \"https://a-ocnfniawgw.cn-shanghai.fcapp.run/v1/messages\" -H \"Content-Type: application/json\" -H \"x-api-key: REDACTED\" -H \"anthropic-version: 2023-06-01\" -H \"anthropic-beta: interleaved-thinking-2025-05-14,prompt-caching-2024-07-31\" -H \"User-Agent: claude-code/2026.2.26\" -d '{\"\"model\"\":\"\"claude-opus-4-6\"\",\"\"max_tokens\"\":16384,\"\"stream\"\":true,\"\"system\"\":[{\"\"type\"\":\"\"text\"\",\"\"text\"\":\"\"You are a helpful assistant.\"\"}],\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"say hi\"\"}]}')",
+      "Bash(curl -s --connect-timeout 10 --max-time 30 -X POST \"https://generativelanguage.googleapis.com/v1beta/openai/chat/completions\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer REDACTED\" -d '{\"\"model\"\":\"\"gemini-2.5-pro\"\",\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}],\"\"max_tokens\"\":50}')"
+    ]
+  }
+}

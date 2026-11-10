@@ -1,0 +1,12 @@
+{
+    "i18n-ally.localesPaths": [
+      "src/lang"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  }

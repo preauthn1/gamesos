@@ -1,0 +1,164 @@
+/**
+ * 主题颜色 CSS 变量
+ * 可以在任何组件的 CSS 中使用这些变量
+ */
+
+:root {
+  /* ========== 主色调 ========== */
+  --color-primary: #4ade80;
+  --color-primary-light: #10b981;
+  --color-primary-dark: #059669;
+
+  /* ========== 强调色/警告色 ========== */
+  --color-accent: #f59e0b;
+  --color-accent-light: #fbbf24;
+  --color-accent-dark: #d97706;
+
+  /* ========== 状态颜色 ========== */
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+  --color-warning: #f59e0b;
+
+  /* ========== 背景色 ========== */
+  --bg-main: #000C00;
+  --bg-dark: #0f2419;
+  --bg-medium: #1e3a28;
+  --bg-overlay: rgba(10, 26, 15, 0.95);
+  --bg-card: linear-gradient(135deg, #1e3a28 0%, #0f2419 100%);
+  --bg-card-alt: linear-gradient(135deg, rgba(30, 58, 40, 0.8) 0%, rgba(15, 36, 25, 0.8) 100%);
+  --bg-light: rgba(15, 36, 25, 0.5);
+
+  /* ========== 体育模块专用背景 ========== */
+  --bg-sports-main: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  --bg-sports-header: #1a1a2e;
+  --bg-sports-card: #1e293b;
+  --bg-sports-dark: rgba(0, 0, 0, 0.3);
+  --bg-sports-light: rgba(0, 0, 0, 0.2);
+
+  /* ========== 文字颜色 ========== */
+  --text-primary: #ffffff;
+  --text-secondary: #8a9a8e;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+  --text-success: #4ade80;
+  --text-disabled: rgba(255, 255, 255, 0.5);
+
+  /* ========== 边框颜色 ========== */
+  --border-primary: #2d5a3d;
+  --border-light: rgba(74, 222, 128, 0.2);
+  --border-medium: rgba(74, 222, 128, 0.5);
+  --border-active: #4ade80;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-faint: rgba(255, 255, 255, 0.05);
+
+  /* ========== 渐变 ========== */
+  --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --gradient-hot: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --gradient-info: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+
+  /* ========== 阴影 ========== */
+  --shadow-sm: 0 1px 4px rgba(16, 185, 129, 0.3);
+  --shadow-md: 0 2px 8px rgba(16, 185, 129, 0.4);
+  --shadow-lg: 0 4px 12px rgba(74, 222, 128, 0.4);
+  --shadow-glow: 0 0 10px rgba(74, 222, 128, 0.5);
+  --shadow-glow-strong: 0 0 10px rgba(74, 222, 128, 0.3);
+  --shadow-accent: 0 0 12px rgba(245, 158, 11, 0.3);
+
+  /* ========== 间距 ========== */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 32px;
+
+  /* ========== 圆角 ========== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-circle: 50%;
+
+  /* ========== 过渡动画 ========== */
+  --transition-fast: all 0.15s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+
+  /* ========== 透明度 ========== */
+  --opacity-disabled: 0.5;
+  --opacity-hover: 0.8;
+  --opacity-active: 0.6;
+}
+
+/* ========== 按钮样式类 (可选) ========== */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--color-primary-light);
+  transition: var(--transition-normal);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: rgba(74, 222, 128, 0.2);
+  color: var(--color-primary);
+  border: 1px solid var(--border-medium);
+  transition: var(--transition-normal);
+}
+
+.btn-secondary:hover {
+  background: rgba(74, 222, 128, 0.3);
+  border-color: var(--border-active);
+}
+
+.btn-secondary:active {
+  background: rgba(74, 222, 128, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--border-active);
+  transition: var(--transition-normal);
+}
+
+.btn-outline:hover {
+  background: rgba(74, 222, 128, 0.1);
+}
+
+/* ========== 卡片样式类 (可选) ========== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-normal);
+}
+
+.card:hover {
+  border-color: var(--border-active);
+  transform: translateY(-2px);
+}
+
+/* ========== 文本样式类 (可选) ========== */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-success {
+  color: var(--text-success);
+}
